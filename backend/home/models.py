@@ -17,4 +17,3 @@ class Xewrwt(models.Model):
     ncery = models.DurationField(null=True,blank=True,)
     qasdd = models.UUIDField(null=True,blank=True,)
     ertfd = models.FloatField(null=True,blank=True,)
-    iuyt = models.BigIntegerField(null=True,blank=True,)
