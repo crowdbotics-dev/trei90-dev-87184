@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Bittest
-from .serializers import BittestSerializer
+from home.models import Bittest,Zak12
+from .serializers import BittestSerializer,Zak12Serializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -37,3 +37,8 @@ class BittestViewSet(viewsets.ModelViewSet):
     serializer_class = BittestSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Bittest.objects.all()
+
+class Zak12ViewSet(viewsets.ModelViewSet):
+    serializer_class = Zak12Serializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Zak12.objects.all()
