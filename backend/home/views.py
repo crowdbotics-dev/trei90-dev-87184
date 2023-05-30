@@ -1,4 +1,4 @@
-from .models import Bittest, Zak12
+from .models import Bittest
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
 

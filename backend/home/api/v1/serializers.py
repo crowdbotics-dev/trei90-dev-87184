@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Bittest,Vyui,Xewrwt,Zak12
+from home.models import Bittest,Vyui,Xewrwt
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -80,12 +80,6 @@ class BittestSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Bittest
-        fields = "__all__"
-
-class Zak12Serializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Zak12
         fields = "__all__"
 
 class XewrwtSerializer(serializers.ModelSerializer):
