@@ -9,6 +9,12 @@ function api_v1_brat_list(payload) {
 function api_v1_brat_create(payload) {
   return treidevAPI.post(`/api/v1/brat/`, payload.data)
 }
+function api_v1_vyui_list(payload) {
+  return treidevAPI.get(`/api/v1/vyui/`)
+}
+function api_v1_vyui_create(payload) {
+  return treidevAPI.post(`/api/v1/vyui/`, payload.data)
+}
 function api_v1_login_create(payload) {
   return treidevAPI.post(`/api/v1/login/`, payload.data)
 }
@@ -59,6 +65,18 @@ function api_v1_brat_partial_update(payload) {
 }
 function api_v1_brat_destroy(payload) {
   return treidevAPI.delete(`/api/v1/brat/${payload.id}/`)
+}
+function api_v1_vyui_retrieve(payload) {
+  return treidevAPI.get(`/api/v1/vyui/${payload.id}/`)
+}
+function api_v1_vyui_update(payload) {
+  return treidevAPI.put(`/api/v1/vyui/${payload.id}/`, payload.data)
+}
+function api_v1_vyui_partial_update(payload) {
+  return treidevAPI.patch(`/api/v1/vyui/${payload.id}/`, payload.data)
+}
+function api_v1_vyui_destroy(payload) {
+  return treidevAPI.delete(`/api/v1/vyui/${payload.id}/`)
 }
 function rest_auth_logout_retrieve(payload) {
   return treidevAPI.get(`/rest-auth/logout/`)
@@ -120,6 +138,8 @@ function rest_auth_registration_verify_email_create(payload) {
 export const apiService = {
   api_v1_brat_list,
   api_v1_brat_create,
+  api_v1_vyui_list,
+  api_v1_vyui_create,
   api_v1_login_create,
   api_v1_zak12_list,
   api_v1_zak12_create,
@@ -137,6 +157,10 @@ export const apiService = {
   api_v1_brat_update,
   api_v1_brat_partial_update,
   api_v1_brat_destroy,
+  api_v1_vyui_retrieve,
+  api_v1_vyui_update,
+  api_v1_vyui_partial_update,
+  api_v1_vyui_destroy,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
   api_v1_zak12_retrieve,
