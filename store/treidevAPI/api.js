@@ -3,6 +3,12 @@ const treidevAPI = axios.create({
   baseURL: "https://trei90-dev-87184.botics.co",
   headers: { Accept: "application/json", "Content-Type": "application/json" }
 })
+function api_v1_brat_list(payload) {
+  return treidevAPI.get(`/api/v1/brat/`)
+}
+function api_v1_brat_create(payload) {
+  return treidevAPI.post(`/api/v1/brat/`, payload.data)
+}
 function api_v1_login_create(payload) {
   return treidevAPI.post(`/api/v1/login/`, payload.data)
 }
@@ -41,6 +47,18 @@ function api_docs_schema_retrieve(payload) {
 }
 function rest_auth_login_create(payload) {
   return treidevAPI.post(`/rest-auth/login/`, payload.data)
+}
+function api_v1_brat_retrieve(payload) {
+  return treidevAPI.get(`/api/v1/brat/${payload.id}/`)
+}
+function api_v1_brat_update(payload) {
+  return treidevAPI.put(`/api/v1/brat/${payload.id}/`, payload.data)
+}
+function api_v1_brat_partial_update(payload) {
+  return treidevAPI.patch(`/api/v1/brat/${payload.id}/`, payload.data)
+}
+function api_v1_brat_destroy(payload) {
+  return treidevAPI.delete(`/api/v1/brat/${payload.id}/`)
 }
 function rest_auth_logout_retrieve(payload) {
   return treidevAPI.get(`/rest-auth/logout/`)
@@ -100,6 +118,8 @@ function rest_auth_registration_verify_email_create(payload) {
   return treidevAPI.post(`/rest-auth/registration/verify-email/`, payload.data)
 }
 export const apiService = {
+  api_v1_brat_list,
+  api_v1_brat_create,
   api_v1_login_create,
   api_v1_zak12_list,
   api_v1_zak12_create,
@@ -113,6 +133,10 @@ export const apiService = {
   rest_auth_user_partial_update,
   api_docs_schema_retrieve,
   rest_auth_login_create,
+  api_v1_brat_retrieve,
+  api_v1_brat_update,
+  api_v1_brat_partial_update,
+  api_v1_brat_destroy,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
   api_v1_zak12_retrieve,
