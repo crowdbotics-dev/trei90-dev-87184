@@ -6,6 +6,12 @@ const treidevAPI = axios.create({
 function api_v1_login_create(payload) {
   return treidevAPI.post(`/api/v1/login/`, payload.data)
 }
+function api_v1_zak12_list(payload) {
+  return treidevAPI.get(`/api/v1/zak12/`)
+}
+function api_v1_zak12_create(payload) {
+  return treidevAPI.post(`/api/v1/zak12/`, payload.data)
+}
 function api_v1_signup_create(payload) {
   return treidevAPI.post(`/api/v1/signup/`, payload.data)
 }
@@ -36,6 +42,18 @@ function rest_auth_logout_retrieve(payload) {
 function rest_auth_logout_create(payload) {
   return treidevAPI.post(`/rest-auth/logout/`)
 }
+function api_v1_zak12_retrieve(payload) {
+  return treidevAPI.get(`/api/v1/zak12/${payload.id}/`)
+}
+function api_v1_zak12_update(payload) {
+  return treidevAPI.put(`/api/v1/zak12/${payload.id}/`, payload.data)
+}
+function api_v1_zak12_partial_update(payload) {
+  return treidevAPI.patch(`/api/v1/zak12/${payload.id}/`, payload.data)
+}
+function api_v1_zak12_destroy(payload) {
+  return treidevAPI.delete(`/api/v1/zak12/${payload.id}/`)
+}
 function api_v1_bittest_retrieve(payload) {
   return treidevAPI.get(`/api/v1/bittest/${payload.id}/`)
 }
@@ -65,6 +83,8 @@ function rest_auth_registration_verify_email_create(payload) {
 }
 export const apiService = {
   api_v1_login_create,
+  api_v1_zak12_list,
+  api_v1_zak12_create,
   api_v1_signup_create,
   api_v1_bittest_list,
   api_v1_bittest_create,
@@ -75,6 +95,10 @@ export const apiService = {
   rest_auth_login_create,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
+  api_v1_zak12_retrieve,
+  api_v1_zak12_update,
+  api_v1_zak12_partial_update,
+  api_v1_zak12_destroy,
   api_v1_bittest_retrieve,
   api_v1_bittest_update,
   api_v1_bittest_partial_update,
