@@ -15,3 +15,6 @@ class Xewrwt(models.Model):
     'Generated Model'
     nmjui = models.CharField(max_length=256,)
     ncery = models.DurationField(null=True,blank=True,)
+class Vyui(models.Model):
+    'Generated Model'
+    mkoii = models.BigIntegerField()
